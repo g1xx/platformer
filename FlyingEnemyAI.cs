@@ -45,6 +45,8 @@ public class FlyingEnemyAI : MonoBehaviour
             return;
         }
 
+        if (enemyStats.isHurt) return;
+
         if (player == null) return;
 
         float distToPlayer = Vector2.Distance(transform.position, player.position);

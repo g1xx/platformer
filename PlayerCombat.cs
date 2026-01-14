@@ -26,6 +26,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
+        damage = PlayerPrefs.GetInt("Damage", 20);
         if (Time.timeScale == 0) return;
 
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
@@ -90,7 +91,7 @@ public class PlayerCombat : MonoBehaviour
             Enemy enemy = e.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(damage, transform);
                 hitAnyone = true;
             }
         }

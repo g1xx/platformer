@@ -8,13 +8,13 @@ public class GroundEnemyAI : MonoBehaviour
     private SpriteRenderer spr;
     private Animator anim;
 
-    [Header("Патруль")]
+    [Header("Patrol")]
     public Transform pointA;
     public Transform pointB;
     public float speed = 2f;
     public float waitTime = 2f;
 
-    [Header("Атака")]
+    [Header("Atack")]
     public float agroDistance = 5f;
     public float attackRange = 1.2f;
 
@@ -23,7 +23,7 @@ public class GroundEnemyAI : MonoBehaviour
     private int attackStep = 0;
     private float attackTimer;
 
-    [Header("Настройки Боя")]
+    [Header("Fight settings")]
     public Transform attackPoint;
     public float weaponHitRadius = 0.4f;
     public int weaponDamage = 20;
@@ -62,6 +62,8 @@ public class GroundEnemyAI : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             return;
         }
+
+        if (enemyStats.isHurt) return;
 
         if (player == null) return;
 

@@ -1,16 +1,19 @@
 using UnityEngine;
-using System.Collections; // Нужно для корутин
+using System.Collections; 
 
 public class Bonfire : MonoBehaviour
 {
-    [Header("Настройки")]
+    [Header("Settings")]
     public KeyCode interactKey = KeyCode.E;
     public GameObject uiPrompt;
     public ParticleSystem fireParticles;
 
     [Header("Эффект отдыха")]
     public CanvasGroup restScreen; 
-    public float fadeDuration = 1.0f; 
+    public float fadeDuration = 1.0f;
+
+    [Header("Bonfire Menu")]
+    public BonfireMenu bonfireMenu;
 
     private bool playerInRange = false;
     private PlayerMovement playerScript;
@@ -49,7 +52,7 @@ public class Bonfire : MonoBehaviour
     {
         playerScript.StartResting(transform.position);
 
-        if (restScreen != null)
+        if (restScreen != null) 
         {
             float timer = 0;
             while (timer < fadeDuration)
@@ -61,16 +64,28 @@ public class Bonfire : MonoBehaviour
             restScreen.alpha = 1;
         }
 
-
-        yield return new WaitForSeconds(0.5f); 
+        yield return new WaitForSeconds(0.5f);
 
         RespawnAllEnemies();
-
         if (healthScript != null) healthScript.HealFull();
-
         if (fireParticles != null) fireParticles.Play();
 
         yield return new WaitForSeconds(0.5f);
+
+        if (bonfireMenu != null)
+        {
+            bonfireMenu.OpenMenu();
+
+            while (bonfireMenu.menuPanel.activeSelf)
+            {
+                yield return null;
+            }
+        }
+        else
+        {
+            yield return new WaitForSeconds(1f);
+            playerScript.StopResting();
+        }
 
         if (restScreen != null)
         {

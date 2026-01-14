@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public static Vector2 lastCheckPointPos;
     public static bool checkpointLoaded = false;
 
+    public static bool isLevelTransition = false;
+
     [Header("Abilities")]
     public bool hasDoubleJump = true;
 
@@ -95,6 +97,12 @@ public class PlayerMovement : MonoBehaviour
 
         coins = PlayerPrefs.GetInt("SaveCoins", 0);
 
+        if (isLevelTransition)
+        {
+            isLevelTransition = false; 
+            return; 
+        }
+
         if (checkpointLoaded)
         {
             transform.position = lastCheckPointPos;
@@ -102,12 +110,20 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (PlayerPrefs.HasKey("SaveX"))
         {
-            LoadGame(); 
+            LoadGame();
         }
     }
 
     void Update()
     {
+
+        // --- Cheat for tests ---
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            AddCoins(500);
+        }
+        // ----------------------------------
+
         if (isResting)
         {
             if (Input.GetButtonDown("Jump") || Input.GetAxisRaw("Horizontal") != 0) StopResting();

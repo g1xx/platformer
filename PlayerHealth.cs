@@ -34,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+
+        maxHealth = PlayerPrefs.GetInt("MaxHealth", 3);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 

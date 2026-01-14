@@ -16,7 +16,7 @@ public class LevelMove : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             nextConnectionID = connectionID;
-
+            PlayerMovement.isLevelTransition = true;
             SceneManager.LoadScene(sceneToLoad);
         }
     }
