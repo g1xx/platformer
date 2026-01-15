@@ -3,7 +3,7 @@ using TMPro;
 
 public class CoinUI : MonoBehaviour
 {
-    [Header("—сылки")]
+    [Header("References")]
     public TextMeshProUGUI coinText; 
     private PlayerMovement player;   
 

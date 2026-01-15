@@ -118,10 +118,10 @@ public class PlayerMovement : MonoBehaviour
     {
 
         // --- Cheat for tests ---
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            AddCoins(500);
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    AddCoins(500);
+        //}
         // ----------------------------------
 
         if (isResting)
@@ -296,17 +296,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (isInputBlocked && !isRolling && !isWallSliding) 
         {
-            // Если мы в WallJump кулдауне, мы должны лететь по инерции, а не стоять на месте
-            // Поэтому тут хитро: если просто Blocked (rest/hurt) -> стоп. Если WallJump -> лети.
-            // Но пока оставим как есть, так как кулдаун короткий.
-            // (Улучшение: не обнулять X если это WallJump cooldown, но для простоты оставим)
-            // FIX: Если это кулдаун после прыжка со стены, мы не должны обнулять скорость!
-            // Мы просто не даем менять moveInput (это уже сделано в Update)
-            // Поэтому здесь ничего менять не надо, кроме проверки isRolling
+          
         }
-        else if (isInputBlocked) // Если заблокировано, но не перекат (например WallJump), не управляем скоростью вручную
+        else if (isInputBlocked) 
         {
-            // Пусть летит по физике
+            
         }
         else if (isRolling)
         {

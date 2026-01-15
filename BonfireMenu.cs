@@ -3,17 +3,17 @@ using TMPro;
 
 public class BonfireMenu : MonoBehaviour
 {
-    [Header("Настройки цен (Здоровье)")]
-    public int healthBaseCost = 50;      // Первая цена
-    public int healthCostIncrease = 50;  // На сколько дорожает каждый раз
-    public int healthIncreaseAmount = 1; // +1 сердце
+    [Header("Price settings (Health)")]
+    public int healthBaseCost = 50;      
+    public int healthCostIncrease = 50;
+    public int healthIncreaseAmount = 1;
 
-    [Header("Настройки цен (Урон)")]
-    public int damageBaseCost = 100;     // Первая цена
-    public int damageCostIncrease = 100; // На сколько дорожает
-    public int damageIncreaseAmount = 5; // +5 урона
+    [Header("Price settings (Damage)")]
+    public int damageBaseCost = 100;
+    public int damageCostIncrease = 100;
+    public int damageIncreaseAmount = 5;
 
-    [Header("UI Ссылки")]
+    [Header("UI Links")]
     public GameObject menuPanel;
     public TextMeshProUGUI coinsText;
 
@@ -69,7 +69,7 @@ public class BonfireMenu : MonoBehaviour
     {
         if (playerHealth != null && playerHealth.hearts != null && playerHealth.maxHealth >= playerHealth.hearts.Length)
         {
-            Debug.Log("Максимум здоровья!");
+            Debug.Log("Maximum health!");
             if (healthButtonText != null) healthButtonText.text = "MAXED";
             return;
         }
@@ -90,11 +90,11 @@ public class BonfireMenu : MonoBehaviour
 
             UpdateCosts();
 
-            Debug.Log("Здоровье улучшено! Новая цена: " + currentHealthCost);
+            Debug.Log("Health improved! New price: " + currentHealthCost);
         }
         else
         {
-            Debug.Log("Не хватает денег! Нужно: " + currentHealthCost);
+            Debug.Log("Not enough money! Needed: " + currentHealthCost);
         }
     }
 
@@ -115,11 +115,11 @@ public class BonfireMenu : MonoBehaviour
 
             UpdateCosts();
 
-            Debug.Log("Урон улучшен! Новая цена: " + currentDamageCost);
+            Debug.Log("Damage improved! New price: " + currentDamageCost);
         }
         else
         {
-            Debug.Log("Не хватает денег! Нужно: " + currentDamageCost);
+            Debug.Log("Not enough money! Needed: " + currentDamageCost);
         }
     }
 

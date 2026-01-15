@@ -3,10 +3,10 @@ using UnityEngine.EventSystems;
 
 public class UIButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
 {
-    [Header("—сылки")]
+    [Header("References")]
     public AudioSource audioSource; 
 
-    [Header("«вуки")]
+    [Header("Sounds")]
     public AudioClip hoverSound; 
     public AudioClip clickSound; 
 

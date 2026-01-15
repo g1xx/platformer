@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelMove : MonoBehaviour
 {
-    [Header("Куда идем?")]
+    [Header("Which scene to load?")]
     public string sceneToLoad; 
 
-    [Header("К какому выходу?")]
+    [Header("Which exit?")]
     public int connectionID; 
 
     public static int nextConnectionID;

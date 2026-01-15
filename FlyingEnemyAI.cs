@@ -4,13 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class FlyingEnemyAI : MonoBehaviour
 {
-    [Header("Настройки полета")]
+    [Header("Flight settings")]
     public float speed = 3f;
     public float chaseDistance = 10f;
     public float stopDistance = 0.5f;
     public bool returnToStart = true;
 
-    [Header("Настройки Атаки")]
+    [Header("Attack Settings)]
     public float attackRange = 1.5f; 
     public float attackCooldown = 1f; 
     private float lastAttackTime;

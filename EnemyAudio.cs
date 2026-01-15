@@ -5,19 +5,19 @@ public class EnemyAudio : MonoBehaviour
 {
     private AudioSource source;
 
-    [Header("Движение (Idle)")]
+    [Header("Movement (Idle)")]
     public AudioClip[] idleSounds;
     [Range(0f, 1f)] public float idleVolume = 0.5f; 
 
-    [Header("Атака")]
+    [Header("Attack")]
     public AudioClip attackSound;
     [Range(0f, 1f)] public float attackVolume = 1f; 
 
-    [Header("Получение урона")]
+    [Header("Taking damage")]
     public AudioClip hurtSound;
     [Range(0f, 1f)] public float hurtVolume = 1f; 
 
-    [Header("Смерть")]
+    [Header("Death")]
     public AudioClip deathSound;
     [Range(0f, 1f)] public float deathVolume = 1f; 
 

@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerCombat : MonoBehaviour
 {
-    [Header("Настройки боя")]
+    [Header("Combat settings")]
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;

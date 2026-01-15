@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyContactDamage : MonoBehaviour
 {
-    [Header("Урон от касания тела")]
+    [Header("Damage from touching the body")]
     public int contactDamage = 10;
 
     private Enemy parentEnemy; 

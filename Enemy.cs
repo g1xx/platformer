@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Характеристики")]
+    [Header("Specifications")]
     public int maxHealth = 100;
     protected int currentHealth;
 
-    [Header("Отбрасывание")]
+    [Header("Discarding")]
     public float knockbackForceX = 5f; 
     public float knockbackForceY = 2f;
     public float stunDuration = 0.3f;
@@ -48,7 +48,6 @@ public class Enemy : MonoBehaviour
 
         if (audioScript != null) audioScript.PlayHurtSound();
 
-        // ЛОГИКА ОТБРАСЫВАНИЯ
         if (attacker != null && rb != null && !isDead)
         {
             StopCoroutine("ResetHurt"); 
@@ -71,7 +70,7 @@ public class Enemy : MonoBehaviour
     {
         if (isDead) return;
 
-        if (lootBag != null) lootBag.InstantiateLoot(transform.position);
+        if (lootBag != null) lootBag.InstantiateLoot(transform.position + Vector3.up * 0.5f);
 
         isDead = true;
         if (audioScript != null) audioScript.PlayDeathSound();

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class LootBag : MonoBehaviour
 {
-    [Header("Что выпадает")]
+    [Header("What falls out")]
     public GameObject droppedItemPrefab;
 
-    [Header("Настройки выпадения")]
+    [Header("Drop settings")]
     public int minDrops = 1; 
     public int maxDrops = 3; 
 

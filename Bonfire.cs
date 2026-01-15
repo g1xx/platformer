@@ -8,7 +8,7 @@ public class Bonfire : MonoBehaviour
     public GameObject uiPrompt;
     public ParticleSystem fireParticles;
 
-    [Header("Ёффект отдыха")]
+    [Header("Relaxation effect")]
     public CanvasGroup restScreen; 
     public float fadeDuration = 1.0f;
 
@@ -109,7 +109,7 @@ public class Bonfire : MonoBehaviour
             enemy.Respawn();
         }
 
-        Debug.Log("¬раги возрождены: " + allEnemies.Length);
+        Debug.Log("Enemies revived: " + allEnemies.Length);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FloatingAnimation : MonoBehaviour
 {
-    [Header("Настройки")]
+    [Header("Settings")]
     public float amplitude = 0.3f; 
     public float frequency = 1.5f; 
 

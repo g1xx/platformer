@@ -29,7 +29,7 @@ public class GroundEnemyAI : MonoBehaviour
     public int weaponDamage = 20;
     public LayerMask playerLayer;
 
-    [Header("Окружение")]
+    [Header("Environment")]
     public LayerMask obstacleLayer;
     public float ledgeCheckX = 0.7f;
     public float ledgeCheckY = 1.2f;

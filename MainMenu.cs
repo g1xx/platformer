@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
 
-        Debug.Log("Сохранения удалены. Начинаем новую игру...");
+        Debug.Log("Saves deleted. Starting a new game...");
 
         SceneManager.LoadScene(1);
     }
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Игра закрылась!");
+        Debug.Log("The game is over!");
         Application.Quit();
     }
 }

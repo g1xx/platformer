@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public static bool GameIsPaused = false;
 
-    [Header("Звуки")]
+    [Header("Sounds")]
     public AudioSource audioSource; 
     public AudioClip openSound;     
     public AudioClip closeSound;    

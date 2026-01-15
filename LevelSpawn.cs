@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LevelSpawn : MonoBehaviour
 {
-    [Header("ID этой точки")]
+    [Header("ID of this point")]
     public int connectionID; 
 
     void Start()

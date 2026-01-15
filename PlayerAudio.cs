@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
-    [Header("Настройки")]
+    [Header("Settings")]
     public AudioSource source;
 
-    [Header("Шаги")]
+    [Header("Steps")]
     public AudioClip[] footsteps;
 
-    [Header("Движение")]
+    [Header("Movement")]
     public AudioClip jumpSound;      
     public AudioClip landSound;     
     public AudioClip rollSound;      
 
-    [Header("Бой")]
+    [Header("Fight")]
     public AudioClip[] swordSwings;
     public AudioClip[] swordHits;
 

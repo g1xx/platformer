@@ -17,7 +17,7 @@ public class AnimationRelay : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Не нашел PlayerCombat у родителя!");
+            Debug.LogError("Could not find PlayerCombat in parent!");
         }
     }
 

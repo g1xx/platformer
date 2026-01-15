@@ -1,13 +1,13 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Нужно для работы со сценами
+using UnityEngine.SceneManagement; 
 
 public class Coin : MonoBehaviour
 {
-    [Header("Настройки")]
+    [Header("Settings")]
     public int value = 1;
     public AudioClip pickupSound;
 
-    [Tooltip("Если галочка стоит — монетка исчезнет навсегда после подбора (как тайник). Если нет — будет появляться снова (как лут с врага).")]
+    [Tooltip("If the check mark is selected, the coin will disappear permanently after being picked up (like a cache). If not, it will reappear (like loot from an enemy).")]
     public bool isUnique = true;
 
     private string uniqueID;

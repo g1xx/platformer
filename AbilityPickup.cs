@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class AbilityPickup : MonoBehaviour
 {
-    [Header(" акую способность даем?")]
+    [Header("What ability do we give?")]
     public bool unlockDoubleJump = true;
 
-    [Header("Ёффекты")]
+    [Header("Effects")]
     public GameObject pickupEffect; 
 
     private void OnTriggerEnter2D(Collider2D collision)
